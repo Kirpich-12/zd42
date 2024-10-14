@@ -3,14 +3,21 @@ n = int(input_data.read())
 
 count = 1
 
-
-if n == 4:
-    ans = 4
+if n <= 4:
+    ans = n
 else:
-    while n > 3:
+    while n > 4:
         count *= 3
         n -= 3
     else:
-        count *= n
+        ans = count * n
 
-print(count)
+
+output_data = open('output.txt', 'w')
+output_data.write(str(ans))
+#запись
+
+
+input_data.close()
+output_data.close()
+#ОБЯЗАТЕЛЬНО не забывать
